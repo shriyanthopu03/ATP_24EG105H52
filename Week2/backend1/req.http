@@ -1,0 +1,59 @@
+GET http://localhost:3000/user-api/users
+
+###
+GET http://localhost:3000/user-api/users/12
+
+
+###
+POST http://localhost:3000/user-api/users
+Content-Type: application/json
+
+{
+    "id":12, 
+    "name":"rav",
+    "age":22
+}
+
+
+###
+PUT http://localhost:3000/user-api/users
+Content-Type: application/json
+
+{
+    "id":101,
+    "name":"ramudu",
+    "age":25
+}
+
+
+###
+DELETE http://localhost:3000/user-api/users/101
+
+
+###
+GET http://localhost:3000/product-api/products
+
+###
+POST http://localhost:3000/product-api/products
+Content-Type: application/json
+
+{
+    "productId":1,
+    "name":"keyboard",
+    "brand":"sam",
+    "price":250
+}
+
+###
+PUT http://localhost:3000/product-api/products
+Content-Type: application/json
+
+{
+    "productId":1,
+    "name":"laptop",
+    "brand":"hp",
+    "price":260
+}
+
+###
+DELETE http://localhost:3000/product-api/products/1
