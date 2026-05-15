@@ -8,7 +8,7 @@ config()
 //add cors middleware
 app.use(
   cors({
-    origin: ["http://localhost:5173"],
+    origin: [process.env.FRONTEND_URL],
   }),
 );
 //body parser middleware
@@ -19,9 +19,9 @@ app.use("/emp-api", empRoute);
 //DB connection
 const connectDB = async () => {
   try {
-    await connect("mongodb://localhost:27017/newdb");
+    await connect(process.env.DB_URL);
     console.log("DB connected");
-    app.listen(4000, () => console.log("server listening on port 4000.."));
+    app.listen(process.env.PORT, () => console.log(`server listening on port ${process.env.PORT}..`));
   } catch (err) {
     console.log("err in DB connection", err.message);
   }

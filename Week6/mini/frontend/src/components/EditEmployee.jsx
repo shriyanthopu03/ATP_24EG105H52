@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { Navigate, useLocation, useNavigate } from "react-router";
 import axios from "axios"
 
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
+
 function EditEmployee() {
   const { register,
     handleSubmit,
@@ -23,7 +25,7 @@ function EditEmployee() {
   const saveModifiedEmp=async(modifiedEmp)=>{
     console.log(modifiedEmp)
     //make http PUT req
-    const res=await axios.put(`http://localhost:4000/emp-api/employees/${state._id}`, modifiedEmp)
+    const res=await axios.put(`${BACKEND_URL}/emp-api/employees/${state._id}`, modifiedEmp)
     if(res.status===200){
       navigate("/list")
     }
