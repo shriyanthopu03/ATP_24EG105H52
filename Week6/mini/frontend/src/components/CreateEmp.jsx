@@ -1,10 +1,8 @@
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { useNavigate } from "react-router";
-import { config } from "dotenv";
-config();
 
-const BACKEND_URL = proccess.env.VITE_BACKEND_URL;
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 function CreateEmp() {
   const [loading, setLoading] = useState(false);
